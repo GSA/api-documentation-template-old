@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>SAM API documentation - GSA</title>
+  <link rel="stylesheet" href="../static/css/normalize.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!--[if IE]>
+  <link rel="stylesheet" href="../static/css/for-ie-only.css">
+  <![endif]-->
+</head>
+<body>
+  <header class="header cf" role="banner">
+      			<div class="wrap">
+
+			<a href="http://www.GSA.gov/developer" target="_blank"><h1><span>GSA.gov</span>/Developers</h1></a>
+				
+            <a href="http://www.SAM.gov" target="_blank">
+                <img class="logo" src="https://cloud.githubusercontent.com/assets/6515287/2777943/53aa67a8-caec-11e3-9248-37414d200130.gif" alt="GSA logo" height="50">
+            </a>
+          
+        	</a>
+        	</div>
+
+  </header>
+
+  <div class="wrap">
+    <div class="content">
+
+    <aside>
+    <h1 class="page-title"><a href="index.html">SAM API</a></h1>
+
+    <nav>    
+        <ul>
+          <li><a href="index.html" class="overview">Overview</a></li>
+          <li><a href="basics.html" class="basics">API Basics</a></li>
+          <li><a href="console" class="console">API Calls</a></li>
+          <li><a href="key" class="console">API Key</a></li>
+          <li><a href="versioning.html" class="versioning">SAM API Versioning</a></li>
+          <li><a href="fields.html" class="fields">Field Ref API v1</a></li>
+          <li><a href="fields2.html" class="fields">Field Ref API v2</a></li>
+          <li><a href="fields3.html" class="fields">Field Ref API v3</a></li>
+          <li><a href="fields4.html" class="fields">Field Ref API v4</a></li>
+          <li><a href="codes.html" class="fields">Field Reference Codes</a></li> 
+          <li><a href="search.html" class="search">Search API</a></li>
+          <li><a href="https://github.com/GSA/sam_api/issues" target="_blank" class="fields">Feedback</a></li>
+        </ul>
+    </nav>
+
+    </aside>
+
+    <section class="main-content" role="main">
+      <h3 id="api-basics">API basics</h3>
+<p>(New content added below for Modular Options)</p>
+
+<p>The SAM API is a GET API which has one operation. The operation will retrieve an entity’s public information. Its endpoint is <code>https://api.data.gov/sam/v1/registrations/</code>.</p>
+
+<p>A couple basic notes: the rate limits for the API are currently 5,000 calls per 24 hours and 5 calls per 5 seconds. As we go forward and understand the impact of usage of the API on SAM, we will adjust the limits accordingly as well as allow for individual users with specific needs to have customized rate limits appropriate to their use.</p>
+
+<h5 id="example-url">Example URL</h5>
+
+<p>Currently, the below URL won’t work without you adding in an API key from api.data.gov. Replace <code>&lt;YOUR_API_KEY&gt;</code> with your api.data.gov provided API key in the below URL to successfully execute the call.</p>
+
+<p><a href="https://api.data.gov/sam/v1/registrations/1459697830000?api_key=YOUR_API_KEY">https://api.data.gov/sam/v1/registrations/1459697830000?api_key=YOUR_API_KEY</a></p>
+
+<h5 id="retrieving-entity-information">Retrieving entity information</h5>
+<p>The endpoint for getting all data begins with <code>/v1/registrations</code>.</p>
+
+<p>The endpoint takes a single URL parameter which is the DUNS and DUNS+4 information concatenated. If the entity does not have a DUNS+4, the user should include <code>0000</code>.</p>
+
+<p>For example, if an entity of interest has a DUNS number of <code>012345678</code> with no DUNS+4, the access to the endpoint would be at <code>/sam/v1/registrations/0123456780000</code>. An entity with the same DUNS but with a DUNS+4 of <code>9999</code> would be accessed at <code>/sam/v1/registrations/0123456789999</code>.</p>
+
+<p>The data in the API is updated daily by approximately 2 AM Eastern time for the prior day’s data.</p>
+
+<h5 id="finding-duns-numbers-to-use">Finding DUNS numbers to use</h5>
+
+<p>In addition to the <a href="http://gsa.github.io/sam_api/sam/search.html">search API</a>, another way to get DUNS numbers is to go to <a href="http://www.sam.gov">SAM</a>, click on <code>Search Records</code> and enter in a company into the Quick Search box. Each entity has a DUNS number that you’ll see in the result set. You’ll see a 9-digit number which represents the DUNS. You can then pad it out with four <code>0</code>s as mentioned above.</p>
+
+<h5 id="search-api">Search API</h5>
+
+<p>These are just the first of many steps in modernizing SAM and IAE. In fall 2014, the SAM API consumers added an API to search the SAM database and retrieve registration information specific to their needs. This means, most of the functionality you see on SAM right now to search for entities is available as an API.</p>
+
+<h5 id="modular-options">Modular Options</h5>
+
+<p>In fall 2015, the SAM API consumers enhanced the API to return only responded or all values. The returned API call will search the SAM database and retrieve registration information specific to their needs.</p>
+
+<p>For example, the API link with an endpoint “?return_values=full” will return all fields, regardless if the field was answered https://api.data.gov/samdata/v4/registrations/0123456780000?return_values=full)</p>
+
+<p>The API link with an endpoint “?return_values=responded” will return all fields, regardless if the field was answered https://api.data.gov/samdata/v4/registrations/0123456780000?return_values=responded</p>
+
+<p>In spring 2016, the SAM API will be further enhanced to include specific module returns. Core Data, Assertions, Reps and Certs, and Points of Contacts are the four main modules a consumer can select to return either all values or responded</p>
+
+<body id="basics"></body>
+
+
+    </section>
+
+    </div>
+  </div> <!--wrap-->
+
+    <footer class="footer cf" role="contentinfo">
+      <div class="wrap">
+                    <section class="footer-oss">
+                <h4>Open source</h4>
+                <p>
+                    This GSA microsite is modified from <a href="https://github.com/cfpb/api">an open source project</a> maintained by the Consumer Financial Protection Bureau. We thank their team for sharing such a strong and useful model.
+                </p>
+                <p>
+                    As a work of the United States Government, source code released by GSA is in the public
+                    domain by default within the United States.
+                </p>
+            </section>
+
+
+            <section class="footer-links">
+                <ul>
+                    <li>
+                        <a href="http://www.gsa.gov/developer">GSA.gov/developer</a>
+                    </li>
+                    <li>
+                        <a href="http://github.com/gsa">github.com/gsa</a>
+                    </li>
+                </ul>
+            </section>
+
+
+
+
+      </div>
+    </footer>
+  <script src="../static/js/docs.min.js"></script>
+  <script type="text/javascript" src="../static/js/expandables.js"></script>
+	
+</body>
+</html>

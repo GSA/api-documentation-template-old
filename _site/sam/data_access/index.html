@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>SAM API documentation - GSA</title>
+  <link rel="stylesheet" href="../static/css/normalize.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!--[if IE]>
+  <link rel="stylesheet" href="../static/css/for-ie-only.css">
+  <![endif]-->
+</head>
+<body>
+  <header class="header cf" role="banner">
+      			<div class="wrap">
+
+			<a href="http://www.GSA.gov/developer" target="_blank"><h1><span>GSA.gov</span>/Developers</h1></a>
+				
+            <a href="http://www.SAM.gov" target="_blank">
+                <img class="logo" src="https://cloud.githubusercontent.com/assets/6515287/2777943/53aa67a8-caec-11e3-9248-37414d200130.gif" alt="GSA logo" height="50">
+            </a>
+          
+        	</a>
+        	</div>
+
+  </header>
+
+  <div class="wrap">
+    <div class="content">
+
+    <aside>
+    <h1 class="page-title"><a href="index.html">SAM API</a></h1>
+
+    <nav>    
+        <ul>
+          <li><a href="index.html" class="overview">Overview</a></li>
+          <li><a href="basics.html" class="basics">API Basics</a></li>
+          <li><a href="console" class="console">API Calls</a></li>
+          <li><a href="key" class="console">API Key</a></li>
+          <li><a href="versioning.html" class="versioning">SAM API Versioning</a></li>
+          <li><a href="fields.html" class="fields">Field Ref API v1</a></li>
+          <li><a href="fields2.html" class="fields">Field Ref API v2</a></li>
+          <li><a href="fields3.html" class="fields">Field Ref API v3</a></li>
+          <li><a href="fields4.html" class="fields">Field Ref API v4</a></li>
+          <li><a href="codes.html" class="fields">Field Reference Codes</a></li> 
+          <li><a href="search.html" class="search">Search API</a></li>
+          <li><a href="https://github.com/GSA/sam_api/issues" target="_blank" class="fields">Feedback</a></li>
+        </ul>
+    </nav>
+
+    </aside>
+
+    <section class="main-content" role="main">
+      <h2 id="sam-roles-and-access">1 SAM Roles and Access</h2>
+
+<p>SAM provides a number of roles to fit the needs of users based on mission requirements and need-to-know. For those users needing public information (FOIA), there is no need to even have a SAM account to use the website. Others needing more highly sensitive information, such as Tax Identification Numbers (TIN) or banking information will need to perform a data access request to gain the required role.</p>
+
+<h3 id="sam-role-definitions">SAM Role Definitions</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>1a</td>
+      <td>2a</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="sam-role-to-access-matrix">SAM Role-to-Access Matrix</h3>
+
+<p>Example: You are a Federal employee at USAID, working on a system that requires you to access vendor’s banking information. You plan to download a daily file (extract) to your system so you can access the information locally. You would need an extract that contains sensitive (financial) information. You need the Entity Management Data Package Sensitive, which means you must request the Sensitive Entity Management Data Viewer role.</p>
+
+<p>With the SAM roles, you will have access to the information on the website, the extract, and the web service. There is no need for a separate request for each. It is up to you how to consume the data.</p>
+
+<h2 id="section">2</h2>
+<p><img src="https://cloud.githubusercontent.com/assets/7384457/2880404/62abf22a-d475-11e3-9b9e-de033e77e9d7.png" alt="iamdomaindiagram" /></p>
+
+<h2 id="data-access-request-process">3 Data Access Request Process</h2>
+
+<p>The data access request process is where a SAM user requests access to information of a higher sensitivity level. With the SAM roles, they may consume this data either on the website, by downloading the extracts, or through the web services. The users may have an individual or system account.</p>
+
+<p>SAM system accounts may have up to 3 points of contact (POC). Keeping POCs on your SAM system account updated is very important. Only a POC is allowed to request a higher level of access to the SAM data. For directions on updating POCs, please refer to Appendix A.</p>
+
+<p>Please be advised; if the (POC) listed on your SAM system account is no longer with your group, you will have to create another SAM system account.</p>
+
+<p>For security reasons, SAM administrators may not alter system account information without the explicit consent of the account POC. If the POC separates or is no longer available to administer the account, another team member will have to generate a new SAM system account and initiate a new data access request.</p>
+
+<h3 id="locating-the-data-access-request-for-an-individual-account">Locating the Data Access Request for an Individual Account</h3>
+
+<ol>
+  <li>Log into SAM.gov.</li>
+  <li>In the <strong>MY SAM</strong> menu select <strong>Data Access &gt; Individual Data Access Request</strong></li>
+  <li>In the <strong>Select Data</strong> page, scroll down. Select the <strong>Data Access Role</strong> and <strong>User Type</strong>, and then click <strong>NEXT</strong>.</li>
+</ol>
+
+<h3 id="locating-the-data-access-request-for-a-system-account">Locating the Data Access Request for a System Account</h3>
+
+<ol>
+  <li>Log into SAM.gov</li>
+  <li>In the MY SAM menu select System Data Access &gt; System Data Access Request</li>
+  <li>In the Select Data page, scroll down. Select the Data Access Role and then click NEXT.</li>
+</ol>
+
+<h3 id="completing-the-data-access-request-form">Completing the Data Access Request form</h3>
+
+<p>From here, you must complete the Approver Information and Justification Reason sections. This process is only a few minutes if you have the information ready.</p>
+
+<p>Government Sponsor/Supervisor – A Federal government official must attest that the requestor requires the higher sensitivity to perform their duties and has the necessary permissions and clearances to do so.</p>
+
+<p>Government Security Official – Due to the information SAM provides, all users must undergo a Security Training and Awareness as mandated by their agencies. The security official will attest that the requestor has taken and passed this training.</p>
+
+<p>Justification Reason – Please provide a concise rationale for requiring higher sensitivity. Keep the explanation under 500 characters total, including spaces.</p>
+
+<p>Before clicking the SUBMIT button, please notice the link above (Data Access Agreement Form). This is the SAM Non-Disclosure Agreement and System Authorization Access Request (SAAR). Please download this PDF and save it.</p>
+
+<h3 id="the-approval-process">The Approval Process</h3>
+
+<p>Once you click SUBMIT, the process begins. The request must be approved by the following in order:</p>
+
+<ul>
+  <li>Government Supervisor/Sponsor</li>
+  <li>Government Security Officer</li>
+  <li>GSA</li>
+</ul>
+
+<p>As soon as you click SUBMIT the Government Sponsor/Supervisor will get an automated email from SAM requesting a decision. They must click the link in the email, provide a justification (under 500 characters), and click SUBMIT. As soon that approver submits, an email goes to the Security Officer for approval. To expedite the process, please give these approvers notice to expect an email from SAM in their mailbox requesting a decision.</p>
+
+<p>Once GSA has rendered final approval, you will receive an email stating that the role has beengranted.</p>
+
+<p>Appendix A – How to Update System Account POCs</p>
+
+<p>A SAM system account is for a System-to-SAM connection. It has the following characteristics:</p>
+
+<ul>
+  <li>Represents a particular information technology (IT) system.</li>
+  <li>Is primarily for systems which need to send data to SAM (such as a contract writing system) or wish to automate the pull of the data through extracts or web services.</li>
+  <li>Is useful if multiple users in your organization need to access the same extract or web service.</li>
+</ul>
+
+<p>System account points of contact (POC) are authorized administrators of the account. A system account must have at least 1, but up to 3 POCs. It is imperative that POCs keep this list up-to-date on a regular basis to account for new team members. To update, please do the following:</p>
+
+<ol>
+  <li>Log into SAM.gov</li>
+  <li>In the MY SAM menu select System Account Settings &gt; System POC Information</li>
+  <li>You will see a list of POCs. To add a POC, click the Add POC button. To update information, update the relevant boxes (First Name, Last Name) and click the SAVE button.</li>
+  <li>To delete a POC, select the POC and click the Delete button. Please note, you may not delete the first POC. If the first POC is gone, you must change that POC. You may remove the 2nd and 3rd POCs.</li>
+</ol>
+
+
+    </section>
+
+    </div>
+  </div> <!--wrap-->
+
+    <footer class="footer cf" role="contentinfo">
+      <div class="wrap">
+                    <section class="footer-oss">
+                <h4>Open source</h4>
+                <p>
+                    This GSA microsite is modified from <a href="https://github.com/cfpb/api">an open source project</a> maintained by the Consumer Financial Protection Bureau. We thank their team for sharing such a strong and useful model.
+                </p>
+                <p>
+                    As a work of the United States Government, source code released by GSA is in the public
+                    domain by default within the United States.
+                </p>
+            </section>
+
+
+            <section class="footer-links">
+                <ul>
+                    <li>
+                        <a href="http://www.gsa.gov/developer">GSA.gov/developer</a>
+                    </li>
+                    <li>
+                        <a href="http://github.com/gsa">github.com/gsa</a>
+                    </li>
+                </ul>
+            </section>
+
+
+
+
+      </div>
+    </footer>
+  <script src="../static/js/docs.min.js"></script>
+  <script type="text/javascript" src="../static/js/expandables.js"></script>
+	
+</body>
+</html>
