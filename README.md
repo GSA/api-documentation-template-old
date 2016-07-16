@@ -1,20 +1,10 @@
-SAM API Documentation
+API Framework documentation
 ====================
 
-This is the documentation repository for the GSA SAM API.  
+This is the documentation template for all GSA APIs.
 
-Thanks to CFPB team for creating this model and for furthering open source in government.  
+This provides a consistent look and feel across our APIs throughout the organization.  API developers will be able to follow through a standard process for creating and publishing APIs.  API consumers will appeciate consistent documentation style.
 
-## Using JavaScript and Bower
 
-If you are going to work on the JavaScript for this site, you need to do the following:
-
-* Run `npm install -g bower` to install Bower.
-* Run `npm install -g grunt-cli` to install Grunt.
-* Run `npm install` in the directory to install other tools.
-* Run `bower install` to install dependencies.
-* Run `bundle install` to install additional dependencies. 
-
-After changing the JavaScript, run `grunt` to rebuild the minified JS.
-
+Thanks to CFPB team for creating this model and for furthering open source in government.  Thanks to 18F and the SAM (IAE) team for providing further expansion of the template.
 
