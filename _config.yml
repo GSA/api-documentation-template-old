@@ -1,6 +1,6 @@
-name: SAM API
+name: API-Framework
 markdown: kramdown
 pygments: true
 safe: true
-baseurl: /sam_api/
+baseurl: /API-Framework/
 exclude: ['.ruby-version', 'node_modules', 'package.json', 'bower.json']
