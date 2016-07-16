@@ -1,0 +1,257 @@
+---
+layout: default
+title: Code Reference
+nav: fields
+script: >
+  addCodeTable('../static/businessTypes.json', 'business-types',
+    [ { key: 'businessTypeCode', header: 'Code'},
+      { key: 'businessTypeName', header: 'Description' } ]);
+  addCodeTable('../static/purpose.json', 'purpose-types',
+    [ { key: 'purposeCode', header: 'Code'},
+      { key: 'purposeName', header: 'Description' } ]);
+  addCodeTable('../static/country.json', 'country-types',
+    [ { key: 'countryCode ', header: 'Code'},
+      { key: 'countryName', header: 'Name' } ]);
+  addCodeTable('../static/msa.json', 'msa-types',
+    [ { key: 'msaCode', header: 'Code'},
+      { key: 'msaDescription', header: 'Name' } ]);
+  addCodeTable('../static/county.json', 'county-types',
+    [ { key: 'countyCode', header: 'Code'},
+      { key: 'countyName', header: 'Name' } ]);
+  addCodeTable('../static/far.json', 'far-types',
+    [ { key: 'farId', header: 'FAR ID'},
+      { key: 'farDescription', header: 'Description' } ]);
+  addCodeTable('../static/dfar.json', 'dfar-types',
+    [ { key: 'dfarID', header: 'DFAR ID'},
+      { key: 'dfarDescription', header: 'Description' } ]);
+  addCodeTable('../static/discipline.json', 'disc-type',
+    [ { key: 'discId', header: 'Code'},
+      { key: 'discDefinition', header: 'Discipline Description' } ]);
+  addCodeTable('../static/experience.json', 'empExp-type',
+    [ { key: 'expID', header: 'Code'},
+      { key: 'expDescription', header: 'Employee Experience Definition' } ]);
+  addCodeTable('../static/revenue.json', 'revenue-type',
+    [ { key: 'revCode', header: 'Code'},
+      { key: 'revDescription', header: 'Revenue Definition' } ]);
+
+---
+<body id="codes">
+
+<h3>Codes for SAM fields</h3>
+
+<a href="#businessTypes">Business Types</a></br>
+<a href="#purposeTypes">Purpose Types</a></br>
+<a href="#countryTypes">Country Codes</a></br>
+<a href="#msaTypes">Metropolitan Statistical Area Codes</a></br>
+<a href="#countyTypes">County Codes</a></br>
+<a href="#farTypes">ID for FAR Responses</a></br>
+<a href="#dfarTypes">ID for DFAR Responses</a></br>
+<a href="#discipline">Discipline (SF 330 Part II) </a></br>
+<a href="#empExp">Employee Experience (SF 330 Part II)</a></br>
+<a href="#revenue">Revenue Index (SF 330 Part II)</a></br>
+
+<a name="businessTypes"></a>
+
+<h5>Business Types</h5>
+<div class="mobile-warning">
+
+              <i class="icon-error-alt"></i> We recommend viewing this table in landscape mode on your mobile device.
+
+            </div>
+<table id="business-types" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/businessTypes.json">here</a>
+
+<a name="purposeTypes"></a>
+
+<h5>Purpose of Registration Types</h5>
+
+<table id="purpose-types" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/purpose.json">here</a>
+
+<a name="countryTypes"></a>
+
+<h5>Codes for Country (FIeld Reference: country)</h5>
+
+<table id="country-types" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/country.json">here</a>
+
+<a name="msaTypes"></a>
+
+<h5>Codes for Metropolitan Statistical Area (FIeld Reference: metropolitanStatisticalArea)</h5>
+
+<table id="msa-types" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/msa.json">here</a>
+
+<a name="countyTypes"></a>
+
+<h5>Codes for County (FIeld Reference: county)</h5>
+
+<table id="county-types" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/county.json">here</a>
+
+<a name="farTypes"></a>
+
+<h5>ID for FAR Responses (FIeld Reference: farResponses)</h5>
+
+<table id="far-types" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/far.json">here</a>
+
+<a name="dfarTypes"></a>
+
+<h5>ID for DFAR Responses (FIeld Reference: dfarResponses)</h5>
+
+<table id="dfar-types" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/dfar.json">here</a>
+
+<a name="discipline"></a>
+
+<h5>Discipline (SF 330 Part II)</h5>
+<div class="mobile-warning">
+
+              <i class="icon-error-alt"></i> We recommend viewing this table in landscape mode on your mobile device.
+
+            </div>
+<table id="disc-type" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/discipline.json">here</a>
+
+<a name="empExp"></a>
+
+<h5>Employee Experience (SF 330 Part II)</h5>
+<div class="mobile-warning">
+
+              <i class="icon-error-alt"></i> We recommend viewing this table in landscape mode on your mobile device.
+
+            </div>
+<table id="empExp-type" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/experience.json">here</a>
+
+<a name="revenue"></a>
+
+<h5>Revenue Index (SF 330 Part II)</h5>
+<div class="mobile-warning">
+
+              <i class="icon-error-alt"></i> We recommend viewing this table in landscape mode on your mobile device.
+
+            </div>
+<table id="revenue-type" class="field-table">
+	<colgroup>
+		<col span="1" style="width: 15%;">
+		<col span="1" style="width: 85%;">
+		<!-- <col span="1" style="width: 15.75%;"> -->
+	</colgroup>
+<thead>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<p>
+Download the JSON for this table <a href="../static/revenue.json">here</a>

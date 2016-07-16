@@ -1,0 +1,10 @@
+[{"revCode":1,"revDescription":"Less than $100,000"},
+{"revCode":2,"revDescription":"$100,000 to less than $250,000"},
+{"revCode":3,"revDescription":"$250,000 to less than $500,000"},
+{"revCode":4,"revDescription":"$500,000 to less than $1 million"},
+{"revCode":5,"revDescription":"$1 million to less than $2 million"},
+{"revCode":6,"revDescription":"$2 million to less than $5 million"},
+{"revCode":7,"revDescription":"$5 million to less than $10 million"},
+{"revCode":8,"revDescription":"$10 million to less than $25 million"},
+{"revCode":9,"revDescription":"$25 million to less than $50 million"},
+{"revCode":10,"revDescription":"$50 million or greater"}]

@@ -1,0 +1,154 @@
+---
+layout: default 
+title: SAM API Versioning 
+nav: versioning 
+---
+
+<p>SAM API  Versioning<br />
+  </p>
+
+<h1>SAM getData API v1</h1>
+<p>The SAM getData API has one operation. The  operation will retrieve an entity&rsquo;s public information. Its endpoint is <a href="https://api.data.gov/sam/v1/registrations/">https://api.data.gov/sam/v1/registrations/</a><br />
+  Please note: the rate limits for the API are  currently 5,000 calls per 24 hours and 5 calls per 5 seconds. As we go forward  and understand the impact of usage of the API on SAM, we will adjust the limits  accordingly as well as allow for individual users with specific needs to have  customized rate limits appropriate to their use.</p>
+<h2>Version 1 (v1)</h2>
+<p>The getData v1 SAM API includes:</p>
+<ul>
+  <li>Added Core Data,  Assertions, and Points of Contact information.&nbsp;  Please note that optional fields that have not been completed by the  registrant are not returned in the API response. </li>
+  <ul>
+    <li>Fields  from Core Data include:</li>
+    <ul>
+      <li>activationDate,  businessStartDate, businessTypes, cage, cageRejectionReason, companyDivision,  congressionalDistrict, corporateStructureCode, corporateStructureDescription,  corporateUrl, correspondenceFlag, countryOfIncorporation, creditCardUsage,  divisionNumber, dodaac, doingBusinessAsName, duns, dunsPlus4, expirationDate,  fiscalYearEndCloseDate, hasDelinquentFederalDebt, hasKnownExclusion,  lastUpdateDate, legalBusinessName, mailingAddress, publicDisplay,  purposeOfRegistration, qualifications, registrationDate, samAddress,  stateOfIncorporation, status, statusMessage, submissionDate</li>
+    </ul>
+    <li>Fields  from Assertions include:</li>
+    <ul>
+      <li>disasterRelief,  type, geographicalAreas, metropolitanStatisticalArea, county, naics, isPrimary,  naicsCode, naicsName, pscCodes, pscName, pscCode,</li>
+    </ul>
+    <li>Fields  from Points of Contact include:</li>
+    <ul>
+      <li>altElectronicBusinessPoc,  altGovtBusinessPoc, altPastPerformancePoc, electronicBusinessPoc,  govtBusinessPoc, pastPerformancePoc</li>
+    </ul>
+  </ul>
+</ul>
+<h2>Version 2 (v2)</h2>
+<p>The following updates have been applied:</p>
+<ul>
+  <li>Added Reps and  Certs data; identified as &ldquo;certifications&rdquo; object</li>
+  <ul>
+    <li>Fields  include from Reps and Certs include:</li>
+    <ul>
+      <li>farResponses,  dfarResponses, id, answers, answerText, answerId, section</li>
+    </ul>
+  </ul>
+</ul>
+<h2>Version 3 (v3)</h2>
+<p>Deployed June 27, 2015</p>
+<p>The following updates have been applied:</p>
+<ul>
+  <li>Added FAR  52.204-17, which deals with CAGE Ownership of Offeror Information</li>
+  <ul>
+    <li>Includes  the addition of Immediate Owner and Highest Level Owner</li>
+  </ul>
+  <li>Added 2 digit  state code in conjunction with Congressional District code for clarity</li>
+  <ul>
+    <li>E.g.  congressionalDistrict: &ldquo;DC 98&rdquo; </li>
+  </ul>
+  <li>Removed answerId  that were sporadically appearing in the certifications object</li>
+  <ul>
+    <li>Identified  answerId as an optional string and cleared for removal</li>
+  </ul>
+  <li>Revised field  name for country within the address string to &nbsp;be tagged consistently as &ldquo;countryCode&rdquo;</li>
+  <ul>
+    <li>SAM  uses the countryCode value that is provided in the GENC <a href="https://nsgreg.nga.mil/doc/view?i=2324">https://nsgreg.nga.mil/doc/view?i=2324</a></li>
+  </ul>
+  <li>Resolved  instances where an http (error code 500) error is thrown when a batch is ran  with a single one duns being included multiple times within the batch</li>
+  <ul>
+    <li>No  error is being thrown</li>
+  </ul>
+  <li>Resolved  instances where an http (error code 500) error is thrown for historical  registrations that are missing a value for congressional district</li>
+  <ul>
+    <li>The  congressional district string appears as null</li>
+  </ul>
+  <li>Resolved  instances where an http (error code 500) error is thrown when a DUNS is missing  mandatory data elements</li>
+  <ul>
+    <li>The  mandatory data elements appear as null</li>
+  </ul>
+  <li>Resolved an issue  that if the Doing Business As name has a &ldquo;[&ldquo; or &ldquo;]&rdquo; it returns as an array</li>
+  <ul>
+    <li>doingBusinessAs  now returns as a string, not an array</li>
+  </ul>
+  <li>Resolved an issue  where Small Business indicator were returning a null for farResponses</li>
+  <ul>
+    <li>Now  displays a &ldquo;Y&rdquo; or &ldquo;N&rdquo; to indicate Small Business status</li>
+  </ul>
+</ul>
+<h2>Version 4 (v4)</h2>
+<p>The following updates have been applied:</p>
+<UL>
+  <LI>Enhanced API getData return by adding 2 modular  options to return either all values (inclusive of &ldquo;null&rdquo; values) or responded  elements</LI>
+  <UL>
+    <LI><EM>Full</EM> -  https://api.data.gov/samdata/v4/registrations/XXXXXXXXX0000?return_values=full</LI>
+    <LI><EM>Responded</EM> -  https://api.data.gov/samdata/v4/registrations/XXXXXXXXX0000?return_values=responded</LI>
+  </UL>
+  <LI>Added Architect-Engineer  Response (SF 330 Part II)</LI>
+  <UL>
+    <LI>Nested under  &ldquo;qualifications&rdquo; and &ldquo;acass&rdquo;</LI>
+  </UL>
+  <LI>Added  Bonding Information from Disaster Response page. Contains four bonding levels</LI>
+  <UL>
+    <LI>Nested  under &ldquo;bondingInformation&rdquo; </LI>
+  </UL>
+  <LI>Added  Address Line 2 for every address object</LI>
+  <UL>
+    <LI>Address  Line 2 is found under the field element &ldquo;line2&rdquo;</LI>
+  </UL>
+  <LI>Revised  52.203-2 data return of the POC. On the front end, there is one text field to  input a first and last name. In the API, there are 2 fields: firstName and  lastName</LI>
+  <UL>
+    <LI>firstName  populates the first word while the lastName populates the last word</LI>
+  </UL>
+  <LI>Revised  a few fields for DFAR 252.209-7002 to provide more clarity to a user</LI>
+  <UL>
+    <LI>&ldquo;name&rdquo;  was changed to &ldquo;controlledEntityName&rdquo;</LI>
+    <LI>&ldquo;mi&rdquo;  was changed to &ldquo;middleInitial&rdquo;</LI>
+  </UL>
+  <LI>Revised  all address objects to include fields that were not being returned. Also  revised formatting for consistency throughout the API</LI>
+  <UL>
+    <LI>Fields  being returned are now &ldquo;line1&rdquo;, &ldquo;line2&rdquo;, &ldquo;city&rdquo;, &ldquo;countryCode&rdquo;, &ldquo;zip&rdquo;, &ldquo;zipPlus4&rdquo;</LI>
+  </UL>
+  <LI>Resolved  an issue for 52.214-14 where the ownerAddress and FacilityAddress was only  returning/copying the last entered facility and addresses.</LI>
+  <UL>
+    <LI>Now  returns each distinct facility if the entity has multiple facility addresses</LI>
+  </UL>
+  <LI>Resolved  instances where the notes section of a Point of Contact was not being displayed</LI>
+</UL>
+
+<p>&nbsp;</p>
+<h1>SAM searchData API</h1>
+<p>The SAM Search API has been developed to  mimic the Search functionality that is currently available from the SAM  website. The Search API provides the opportunity to perform a search  transaction in the following two options. Quick Search takes a single search  term provided by the user and compares it to a set of predefined database  fields. Advanced Search allows the user to search by entering a value that is  then used to search a user selected predefined search category. <br />
+  Notice that the searchData is through a  JSON-based &ldquo;hypermedia as the engine of application state&rdquo; (HATEOAS with the  appropriate links object within the result set). The intent going forward will  be to use this model to allow for a scalable architecture of IAE&rsquo;s APIs to be  built. </p>
+<h2>Version 1 (v1)</h2>
+<p>The following updates have been applied:</p>
+<ul>
+  <li>Added Advanced  Search features which allows users to search by specific fields</li>
+  <ul>
+    <li>Fields  added to the Advanced Search include:</li>
+    <ul>
+      <li>legalBusinessName,  status, duns, dunsPlus4, hasKnownExclusion, expirationDate, samAddress, cage,  dodaac, hasDelinquentFederalDebt</li>
+    </ul>
+  </ul>
+</ul>
+<h2>Version 2 (v2)</h2>
+<p>Deployed June 27, 2015</p>
+<p>The following updates have been applied:</p>
+<ul>
+  <li>Added ability to  check companies that were added/updated /expired between 2 dates
+    <ul>
+      <li>Will  use the following format
+        <ul>
+          <li>expirationDate:[2015-01-01,2015-05-05]</li>
+          <li>updateDate:[2015-01-01,2015-05-05]</li>
+          <li>createDate:[2015-01-01,2015-05-05]</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  </ul>
