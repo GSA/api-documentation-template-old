@@ -2,5 +2,5 @@ name: API-Framework
 markdown: kramdown
 pygments: true
 safe: true
-baseurl: /API-Framework/
+baseurl: /Framework/
 exclude: ['.ruby-version', 'node_modules', 'package.json', 'bower.json']
