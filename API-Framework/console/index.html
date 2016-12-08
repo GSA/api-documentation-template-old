@@ -35,7 +35,7 @@
   <script type="text/javascript">
     $(function () {
       window.swaggerUi = new SwaggerUi({
-      url: "API-Framework/API-Framework/console/sam_swagger.json",
+      url: "/API-Framework/static/api_docs/api_docs.json",
       dom_id: "swagger-ui-container",
       supportedSubmitMethods: ['get' ],
       onComplete: function(swaggerApi, swaggerUi){
@@ -43,7 +43,7 @@
           console.log("Loaded SwaggerUI")
         }
         $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
-        $onload = Docs.toggleEndpointListForResource('API-Framework/API-Framework/console/sam_swagger.json');
+        $onload = Docs.toggleEndpointListForResource('sam_swagger.json');
       },
       onFailure: function(data) {
         if(console) {
