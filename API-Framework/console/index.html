@@ -43,7 +43,7 @@
           console.log("Loaded SwaggerUI")
         }
         $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
-        $onload = Docs.toggleEndpointListForResource('sam_swagger.json');
+        $onload = Docs.toggleEndpointListForResource('API-Framework/API-Framework/console/sam_swagger.json');
       },
       onFailure: function(data) {
         if(console) {
