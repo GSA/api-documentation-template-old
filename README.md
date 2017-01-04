@@ -1,4 +1,4 @@
-API Framework documentation
+API Documentation Template
 ====================
 
 This is the documentation template for all GSA APIs.
